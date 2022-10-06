@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> Deep Learning OCR </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+	<link rel='stylesheet' href="{% static 'css/proj1.css' %}">
+</head>
+<body>
+		<label>
+		<!-- toggle button here -->
+		<input type="checkbox">
+		<div class="toggle">
+			<span class="common top_line"></span>
+			<span class="common middle_line"></span>
+			<span class="common bottom_line"></span>
+		</div>
+	<div class="sidebar">
+			<h1>Menu</h1>
+		<ul class = 'first-ul'>
+
+		
+			<li style="--i:1"><a href="https://stormy-cove-68986.herokuapp.com"><i class="fas fa-tv"></i>Showcase</a></li>
+		
+			<li style="--i:3"><a href="https://stormy-cove-68986.herokuapp.com/accounts/aboutme"><i class="far fa-user"></i>About Me</a></li>
+
+
+			<li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com/Stocks"><i class="far fa-tv"></i>Strat&Trackers</a></li>
+
+			<li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com"><i class="far fa-tv"></i>Ticker News</a></li>
+
+
+			<li style="--i:2"><a href="https://stormy-cove-68986.herokuapp.com/accounts/fitness"><i class="far fa-heart"></i>Fit Mix</a></li>
+			<li style="--i:5"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment"></i>Email</a></li>
+			<li style="--i:6"><a href="https://github.com/casualfawn"><i class="far fa-folder"></i>Github</a></li>
+			<li style="--i:2"><a href="https://www.buymeacoffee.com/casualfawn"><i class="far fa-heart"></i>Donate Coffee</a></li>
+			<li style="--i:7"><a href="https://stormy-cove-68986.herokuapp.com/accounts/resume"><i class="far fa-address-book"></i>Resume</a></li>
+		</ul class = 'first-ul'>
+		</div>
+							<center>
+										<div class='wrapper'>
+			<h2 class = 'wrapper'>Deep Learning for OCR</h2>
+
+			<div class = 'scroll'>
+				<p style="text-align:left; width: 1600px; padding-left:70px;">
+					<img src='/static/img/proj1_ex1.png' class='wdn-stretch rounded-corners'/></p>
+				<p style="text-align:left; width: 1200px; padding-left:120px;"><b>Ocular Character Recognition CNN | Deep Learning, Keras ,Tensorflow </b> <br> <br> </p>
+						     
+
+				
+				<p style="text-align:left; width: 1200px; padding-left:100px; text-indent: 0px; color='white';">
+
+	The code above demonstrates a component of a computer vision model that classifies critical process measurements from video using ocular character recognition (OCR). OCR methodology can be used for a variety of tasks and this use case involves classifying measurements from a device with OCR in order to create a self-monitoring alert system with valid parameter predictions. 
+	<br>
+	<br>
+
+	Let's say you live video stream of information that is visually inspected by team members to confirm that process measurements are within a certain range at particular times. If these readings are not constantly monitored and values fall out of range for too long it will be detrimental to the end-product. Furthermore, these continuous process measurements are not compiled in a database and are inaccessible for any kind of retrospective analysis. This "lost data" may have the potential for improvements that could be made to the procedure that is being monitored. Suppose the described process creates a product that is eventually measured for its quality. OCR capture and classification modeling allows these measurements to be captured and compiled for retrospective analyses and product quality prediction.
+	<br>
+	<br>
+	The OCR model was built using screen capture images of the digit values as training data. The multi-layered CNN model quickly achieved acceptable accuracy as the digit images did not excessively vary in size or quality. The model was built with the TensorFlow/Keras API and consists of two Conv2D layers, and 'relu' optimization. A GPU device was used for decreasing the amount of time needed for the 20,000 epochs of training and AWS EC2 instances were created for scaling future modeling. Once completed and model weights saved, scheduled tasks were set to predict on a live  stream of inbound video. Digit predictions were continuously compiled in a database created for the company. After each scheduled prediction task ran in python, the digits were formatted and compared to set static numeric threshold values. A series of if/else statements were written to compare the classified values of digit images to parameter thresholds. If any value fell out of range a series of functions would trigger alerts to be sent from a text messaging service API with the warning message and out-of-range values. Functions were also written to give team members text-back options which toggle whether these notifications are sent. These toggles allowed flexibility for situations where readings may be out of range due to device maintenance. While the front-facing alert system  is used daily, the persistent storage of data is the most important feature of this project. Now, product quality measures can be compared with the measures captured via OCR during the process. I.E. conversations can be had using new data to determine what 'tends to go wrong' when completed procedures produce low product quality or yield. With this information, team members working with a savvy statistician could potentially pin down relationships in value fluctuations at certain time-points that relate to product quality. These statistical relationships offer an opportunity for predictive modeling that could then identify process issues before they effect the quality of the end-product. 
+	This project is one example of many implementations that OCR could be used for. From digit recognition and document classification to text extraction and beyond, the potential implementations of computer vision technology are only bound by one's creativity.
+			
+
+
+				</p> 
+			</center>
+			</div>
+	</div>
+
+
+
+
+
+
+	</label>
+	<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>
+

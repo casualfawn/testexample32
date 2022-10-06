@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> Animal Shelter </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+	<link rel='stylesheet'  href="{% static 'css/newstyleanim.css' %}">
+</head>
+<body>
+		<label>
+		<!-- toggle button here -->
+		<input type="checkbox">
+		<div class="toggle">
+			<span class="common top_line"></span>
+			<span class="common middle_line"></span>
+			<span class="common bottom_line"></span>
+		</div>
+		<div class="sidebar">
+			<h1>Menu</h1>
+		<ul class = 'first-ul'>
+
+			
+			<li style="--i:1"><a href="https://stormy-cove-68986.herokuapp.com"><i class="fas fa-tv"></i>Showcase</a></li>
+		
+			<li style="--i:3"><a href="https://stormy-cove-68986.herokuapp.com/accounts/aboutme"><i class="far fa-user"></i>About Me</a></li>
+
+
+			<li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com/Stocks"><i class="far fa-tv"></i>Strat&Trackers</a></li>
+
+			<li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com"><i class="far fa-tv"></i>Ticker News</a></li>
+
+
+			<li style="--i:2"><a href="https://stormy-cove-68986.herokuapp.com/accounts/fitness"><i class="far fa-heart"></i>Fit Mix</a></li>
+			<li style="--i:5"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment"></i>Email</a></li>
+			<li style="--i:6"><a href="https://github.com/casualfawn"><i class="far fa-folder"></i>Github</a></li>
+			<li style="--i:2"><a href="https://www.buymeacoffee.com/casualfawn"><i class="far fa-heart"></i>Buy Me Coffee</a></li>
+			<li style="--i:7"><a href="https://stormy-cove-68986.herokuapp.com/accounts/resume"><i class="far fa-address-book"></i>Resume</a></li>
+		</ul class = 'first-ul'>
+		</div>
+		    <center>
+<div class='wrapper'>
+			<div class = 'scroll'>
+				
+					<iframe src="https://fathomless-springs-69521.herokuapp.com/" width="1430" height="840"> </iframe>
+					<br>
+					<b>Shelter Management System and Predictive Modeling</b> 
+					<br> <br>
+							 <div class = 'text'>	
+						     The Animal Shelter management system was built in Shiny/R and includes a predictive tool to help combat low rates of adoption for dogs that are at high risk of transfer or euthenasia. 
+						     					<br> 		<br>			<br>
+
+
+
+						      This mobile-friendly application consists of three components that allow would-be technicans to submit and compile new animal info, track scheduled visits, and see adoption reccommendations for at-risk dogs. The adoption reccommendations use R's original implementaion of Gradient Boosted models (gbm) to match current at-risk animals with the upcoming visitors who are most likely to adopt them. More on this below.
+					<br>					<br> <br>
+
+
+ The first tab of this application allows technicians to see the upcoming visitor schedule and each individual's relative prediction value for at-risk animal adoption. Technicians can jump to the 'Adopter Predictions' tab to match upcoming visitors that have high prediction values to the current at-risk shelter dogs displayed in the bottom table. Techs are also able to check scheduling and predictions as well as submit new animal records (stored in a NoSQL datbase) conveniently from their phone. <br> <br> </div>
+
+
+
+
+
+
+
+ <div class="container">
+ <div class = 'text-image'>
+      	 The purpose of the gbm is to provide shelter technicians with information that will lead to more at-risk animal adoptions. Feature importance was measured for all dogs and age was shown to be the most influential variable (shown on the right). Thus, older dog adoption became the classification problem based on features of shelter dogs, adopters, and non-adopters. Gbm was chosen and a rudimentary model was built using mock-historical data of at-risk animals and adopters. Data preprocessing aside, two rounds of manual hyperparameter tuning were implemented which resulted in an accuracy score of .8468. The scores for each visitor's at-risk dog adoption on the schedule and 'Adopter Predictions' tab reflect the predicted values from the model.</p> <br>
+      	</div>
+ <div class="image">
+       <img src='/static/img/rabhav1.png' class='wdn-stretch rounded-corners'/>
+      </div>
+            </div>
+
+	
+<br>
+
+          							 <div class = 'text'>	
+
+ 	 Information about upcoming visitors combined with data about the current animals at the shelter is used to predict and reveal the most likely at-risk animals to be adopted by each upcoming visitor.  On the 'adoption prediction' tab you will notice a table for each visitor arranged by prediction values from the gbm of adoption for each at-risk animal.  Here, technicians can observe the most-likely at-risk dogs to be adopted for each scheduled visitor and use this information to make suggestions during visits with potential adopters.</div> <br> <br><br><br><br><br>
+			</div>
+	</div>
+
+
+
+  </center>
+
+
+
+
+	</label>
+	<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>

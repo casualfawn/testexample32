@@ -1,0 +1,190 @@
+
+<html lang="en">
+<head>
+		{% load static %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href="{% static 'css/pdf_zoom.css' %}">
+  <title>Resume</title>
+  <script
+    src="http://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+  </script>
+  <body>
+        <label>
+        <!-- toggle button here -->
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="common top_line"></span>
+            <span class="common middle_line"></span>
+            <span class="common bottom_line"></span>
+        </div>
+      <div class="sidebar">
+            <h1>Menu</h1>
+        <ul class = 'first-ul'>
+
+            <li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com/TickerTracker"><i class="far fa-tv"></i>Strat&Trackers</a></li>
+
+            <li style="--i:3"><a href="https://fathomless-springs-69521.herokuapp.com"><i class="far fa-tv"></i>Ticker News</a></li>
+
+
+            <li style="--i:1"><a href="https://stormy-cove-68986.herokuapp.com"><i class="fas fa-tv"></i>Showcase</a></li>
+        
+            <li style="--i:3"><a href="https://stormy-cove-68986.herokuapp.com/accounts/aboutme"><i class="far fa-user"></i>About Me</a></li>
+            <li style="--i:2"><a href="https://stormy-cove-68986.herokuapp.com/accounts/fitness"><i class="far fa-heart"></i>Fit Mix</a></li>
+            <li style="--i:5"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment"></i>Email</a></li>
+            <li style="--i:6"><a href="https://github.com/casualfawn"><i class="far fa-folder"></i>Github</a></li>
+            <li style="--i:2"><a href="https://www.buymeacoffee.com/casualfawn"><i class="far fa-heart"></i>Buy Me Coffee</a></li>
+            <li style="--i:7"><a href="https://stormy-cove-68986.herokuapp.com/accounts/resume"><i class="far fa-address-book"></i>Resume</a></li>
+        </ul class = 'first-ul'>
+        </div>
+		
+  <style>
+      #canvas_container {
+          width: 1880px;
+          height: 905px;
+          padding-top: 35px;
+          padding-left: 10px;
+
+          overflow: hidden;
+      }
+
+      #canvas_container {
+    background:linear-gradient(to left, whitesmoke ,gray );
+        text-align: center;
+      }
+      #navigation_controls {
+        background:linear-gradient(to left, whitesmoke ,gray );
+        padding-left: 623px;
+
+      }
+         #zoom_controls {
+        background:linear-gradient(to left, whitesmoke ,gray );
+        padding-left: 935px;
+        padding-bottom: -50px;
+
+      }
+      #my_pdf_viewer{
+                background:linear-gradient(to left, whitesmoke ,gray );
+width: 1880px;
+
+
+      }
+  </style>
+</head>
+<body>
+     <div id="my_pdf_viewer">
+        <div id="canvas_container">
+            <canvas id="pdf_renderer"></canvas>
+        </div>
+
+        <div id="navigation_controls">
+            <button id="go_previous">Previous</button>
+            <input id="current_page" value="1" type="number"/>
+            <button id="go_next">Next</button>
+        </div>
+
+        <div id="zoom_controls">  
+            <button id="zoom_in">+</button>
+            <button id="zoom_out">-</button>
+        </div>
+    </div>
+
+    <script>
+        var myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1.11
+        }
+     
+        pdfjsLib.getDocument("{% static 'img/iframedoc.pdf' %}").then((pdf) => {
+     
+            myState.pdf = pdf;
+            render();
+
+        });
+
+        function render() {
+            myState.pdf.getPage(myState.currentPage).then((page) => {
+         
+                var canvas = document.getElementById("pdf_renderer");
+                var ctx = canvas.getContext('2d');
+     
+                var viewport = page.getViewport(myState.zoom);
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+         
+                page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                });
+            });
+        }
+
+        document.getElementById('go_previous').addEventListener('click', (e) => {
+            if(myState.pdf == null || myState.currentPage == 1) 
+              return;
+            myState.currentPage -= 1;
+            document.getElementById("current_page").value = myState.currentPage;
+            render();
+        });
+
+        document.getElementById('go_next').addEventListener('click', (e) => {
+            if(myState.pdf == null || myState.currentPage > myState.pdf._pdfInfo.numPages) 
+               return;
+            myState.currentPage += 1;
+            document.getElementById("current_page").value = myState.currentPage;
+            render();
+        });
+
+        document.getElementById('current_page').addEventListener('keypress', (e) => {
+            if(myState.pdf == null) return;
+         
+            // Get key code
+            var code = (e.keyCode ? e.keyCode : e.which);
+         
+            // If key code matches that of the Enter key
+            if(code == 13) {
+                var desiredPage = 
+                document.getElementById('current_page').valueAsNumber;
+                                 
+                if(desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
+                    myState.currentPage = desiredPage;
+                    document.getElementById("current_page").value = desiredPage;
+                    render();
+                }
+            }
+        });
+
+        document.getElementById('zoom_in').addEventListener('click', (e) => {
+            if(myState.pdf == null) return;
+            myState.zoom += 0.25;
+            render();
+        });
+
+        document.getElementById('zoom_out').addEventListener('click', (e) => {
+            if(myState.pdf == null) return;
+            myState.zoom -= 0.25;
+            render();
+        });
+    </script>
+</label>
+</main>
+<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>
+

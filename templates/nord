@@ -1,0 +1,136 @@
+#matrix jr data engineer,  ds:truist, lidl, matrix, pnc?
+
+
+# distinguished data engineer
+
+
+Hadoop as the file system for your
+data lake decide to leverage Spark as a much faster
+processing framework. i.e. R spark cluster, ELT
+
+
+cloud data platforms: convenient big data ELT, create and managedatapipeliens
+database design, data modeling,batch/streaming, etl design
+
+SQL merges
+ Snowflake and Spark: data warehousing
+  data in spark, use spark to connect to it, use R/python. spark better, doesn't seperate storage and compute
+
+
+
+
+Kafka -> Spark Streaming -> profit
+
+sc = SparkContext("local[2]", "NetworkWordCount")
+ssc = StreamingContext(sc, 1)
+lines = ssc.socketTextStream()
+# split sentences to words from stream
+words = lines.flatMap(lambda line: line.split(" "))
+wordCounts()
+
+
+
+full life-cycle  project implementation
+
+
+
+
+
+
+ λ
+ α
+
+#-
+
+Snowflake: built in python drivers
+library(DBI)
+library(dplyr)
+library(dbplyr)
+library(odbc)
+myconn <- DBI::dbConnect(odbc::odbc(), "SNOWFLAKE_DSN_NAME", uid="USERNAME", pwd='Snowflak123')
+mydata <- DBI::dbGetQuery(myconn,"SELECT * FROM EMP")
+head(mydata)
+
+
+py
+import snowflake.connector
+PASSWORD = os.getenv('SNOWSQL_PWD')
+WAREHOUSE = os.getenv('WAREHOUSE')
+
+#- insert
+conn.cursor().execute(
+        "INSERT INTO test_table(col1, col2) VALUES " + 
+        "    (123, 'test string1'), " + 
+        "    (456, 'test string2')")
+
+cur.execute('select * from products')
+  sql_command = "select col1, col2 from test_table "
+        sql_command += " where col2 like '%%York' limit %(lim)s"
+        parameter_dictionary = {'lim': 1 }
+        cur.execute(sql_command, parameter_dictionary)
+
+  ^^^ sql find new york
+
+
+
+
+SQL and Notes Nord
+
+
+
+
+
+
+
+
+
+
+
+Select *
+FROM customers
+WHERE name != ''
+  AND sub_type LIKE 'annual_'
+  AND days_subscribed > 365
+SELECT customers2.info1, customers2.info2, customers2.id
+FROM customers2
+LEFT JOIN customers
+  ON customers.id = customers2.id
+
+
+  #in R
+
+
+library(MySQL)
+library(RDBMS)
+library(sparklyr)
+df <- db$find() %>%
+  filter(., !name == '' & days_subscribed < 365) %>%
+  left_join(., df2, by = 'customer_id') %>%
+  sample_n(., 150) %>%
+  hypothesis test
+
+
+
+  #-- cloud xp:
+    Mongo, but frankly, company is a cautious boat..(?) only have 3 clusters but have yet to have issue...
+    came up with proj idea, started with research, then tensorflow docs, then trained model to classify/predict digits based on pixels of region of int.
+    scheduled tasks to upload data from our server to MongoDB every 10 seconds, text alerts if current values out of range. R runs recurring analytics every 30 seconds, inserts data into MongoDB for ShinyApp (charts, trends, monitoring). 
+
+
+    Hoping to work with larger datasets and different stakes, rn product blahblah, decision-making doesn't change, would like to work with decisionmakers and give my input...
+
++
+full life-cycle  project implementation
+
+
+
+
+
+Hello Stephen!
+
+	Thank you again for meeting with me, it was great speaking with you about the analyst role and some of the team dynamics and projects happening at Nordstorm. Also, you mentioned you were not able to find my profile on Nordstrom, is there anything you need me to send you or anything I should do (like reapply) to be considered for this opportunity? Thanks!
+	
+	
+Mark
+
+
